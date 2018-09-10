@@ -6,11 +6,11 @@ namespace Name
 {
 	public class AsteroidSpawner : MonoBehaviour
 	{
+		public Transform player;
 		public Camera cam;
 		public Transform newParent;
-		public GameObject prefab;
 		public LayerMask layers;
-		public Transform player;
+		public GameObject[] prefabs;
 
 		float camHeight;
 		float camWidth;
@@ -29,20 +29,30 @@ namespace Name
 			}
 		}
 
+		GameObject GetPrefab()
+		{
+			return prefabs[Random.Range(0, prefabs.Length-1)];
+		}
+
 		void Spawn()
 		{
-			var prefabIns = Instantiate(prefab);
+			if ( prefabs == null || prefabs.Length == 0  )
+			{
+				return;
+			}
+
+			var prefabIns = Instantiate(GetPrefab());
 			prefabIns.transform.parent = newParent;
 
 			camHeight = cam.orthographicSize;
  			camWidth = camHeight * cam.aspect;
 
 			margin = prefabIns.GetComponent<SpriteRenderer>().size * prefabIns.transform.localScale;
-			Debug.Log("margin: " + margin.ToString());
+			//Debug.Log("margin: " + margin.ToString());
 
 			SetPosition(prefabIns);
 			
-			prefabIns.transform.position = new Vector3(prefabIns.transform.position.x, prefabIns.transform.position.y, layers);
+			prefabIns.transform.position = new Vector3(prefabIns.transform.position.x, prefabIns.transform.position.y, 0);
 
 			var asteroid = prefabIns.GetComponent<AsteroidMovement>();
 			asteroid.dir = GetRandomDir(prefabIns.transform.position);

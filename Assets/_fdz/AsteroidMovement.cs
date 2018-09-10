@@ -6,6 +6,7 @@ namespace Name
 {
 	public class AsteroidMovement : MonoBehaviour
 	{
+		public int ScorePoints = 10;
 		public Vector2 dir;
 		public float speed;
 
@@ -14,6 +15,7 @@ namespace Name
 		void Awake()
 		{
 			rb = GetComponent<Rigidbody2D>();
+			Destroy(this, 10);
 		}
 
 		void FixedUpdate()
