@@ -215,7 +215,8 @@ MonoBehaviour:
   playerSpeed: 1.5
   maxXPos: 2.65
   maxYPos: 1.475
-  shootingCooldown: 0.5
+  shootingCooldown: 0.1
+  starCooldown: 2
 --- !u!50 &770860157
 Rigidbody2D:
   serializedVersion: 4
@@ -325,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 770860153}
   bullet: {fileID: 1276179651842640, guid: 2a520ba5955d58f49ae63e1f010585c3, type: 2}
+  starAttackQuantity: 5
 --- !u!1001 &1318801714
 Prefab:
   m_ObjectHideFlags: 0
@@ -392,7 +394,7 @@ GameObject:
   - component: {fileID: 1585201783}
   - component: {fileID: 1585201785}
   m_Layer: 0
-  m_Name: b1
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,6 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7d55ce1b614ac4588ab9a850c3ac75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundSpeed: 2
   player: {fileID: 770860153}
 --- !u!1 &2108855033
 GameObject:

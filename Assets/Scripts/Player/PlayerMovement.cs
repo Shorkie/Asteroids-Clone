@@ -16,8 +16,11 @@ namespace Name
 		public float maxYPos = 3;
 		//Cooldown
 		public float shootingCooldown = 1f;
+		public float starCooldown = 2f;
 		float cooldownTimer = 0f;
+		float starTimer = 0f;
 		bool canShoot = true;
+		bool canStar = true;
 		// Use this for initialization
 		void Start ()
 		{
@@ -56,6 +59,7 @@ namespace Name
 				//Rotate clockwise
 				this.transform.Rotate (0, 0, -rotationSpeed * Time.deltaTime);
 			}
+			//Shooting stuff
 			if (Input.GetKey (KeyCode.Space))
 			{
 				if (canShoot == true)
@@ -63,6 +67,16 @@ namespace Name
 					var bs = GameObject.Find ("bulletSpawner").GetComponent<BulletSpawner> ();
 					canShoot = false;
 					bs.spawnBullet ();
+				}
+
+			}
+			if (Input.GetKey (KeyCode.LeftControl))
+			{
+				if (canStar == true)
+				{
+					var bs = GameObject.Find ("bulletSpawner").GetComponent<BulletSpawner> ();
+					canStar = false;
+					bs.starAttack ();
 				}
 
 			}
@@ -75,11 +89,19 @@ namespace Name
 
 		void Cooldown ()
 		{
+			//Normal Attack CD
 			cooldownTimer -= Time.deltaTime;
 			if (cooldownTimer <= 0f)
 			{
 				canShoot = true;
 				cooldownTimer = shootingCooldown;
+			}
+			//Star Attack CD
+			starTimer -= Time.deltaTime;
+			if (starTimer <= 0f)
+			{
+				canStar = true;
+				starTimer = starCooldown;
 			}
 		}
 
