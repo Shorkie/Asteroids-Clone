@@ -7,6 +7,9 @@ namespace Name
 {
 	public class PlayerMovement : MonoBehaviour
 	{
+		//Boost
+		public GameObject boostGO;
+		public bool boost = false;
 		//Movement
 		public int rotationSpeed = 500;
 		public float playerSpeed = 0.5f;
@@ -19,8 +22,8 @@ namespace Name
 		public float starCooldown = 2f;
 		float cooldownTimer = 0f;
 		float starTimer = 0f;
-		bool canShoot = true;
-		bool canStar = true;
+		bool canShoot = false;
+		bool canStar = false;
 		// Use this for initialization
 		void Start ()
 		{
@@ -35,19 +38,25 @@ namespace Name
 			inputManager ();
 			Portal ();
 			Cooldown ();
+			Boost ();
 		}
 
 		void inputManager ()
 		{
+			//Exit application
+			if (Input.GetKeyDown (KeyCode.Escape))
+			{
+				Application.Quit ();
+			}
 			if (Input.GetKey (KeyCode.UpArrow))
 			{
 				//Go forward
 				transform.position += transform.up * Time.deltaTime * playerSpeed;
+				boost = true;
 			}
-			if (Input.GetKey (KeyCode.DownArrow))
+			else
 			{
-				//Go backwards
-				transform.position -= transform.up * Time.deltaTime * playerSpeed;
+				boost = false;
 			}
 			if (Input.GetKey (KeyCode.LeftArrow))
 			{
@@ -60,6 +69,7 @@ namespace Name
 				this.transform.Rotate (0, 0, -rotationSpeed * Time.deltaTime);
 			}
 			//Shooting stuff
+			//Single Bullet
 			if (Input.GetKey (KeyCode.Space))
 			{
 				if (canShoot == true)
@@ -70,7 +80,8 @@ namespace Name
 				}
 
 			}
-			if (Input.GetKey (KeyCode.LeftControl))
+			//Star Attack
+			if (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.RightControl))
 			{
 				if (canStar == true)
 				{
@@ -91,17 +102,17 @@ namespace Name
 		{
 			//Normal Attack CD
 			cooldownTimer -= Time.deltaTime;
-			if (cooldownTimer <= 0f)
+			if (cooldownTimer <= 0f && canShoot == false)
 			{
-				canShoot = true;
 				cooldownTimer = shootingCooldown;
+				canShoot = true;
 			}
 			//Star Attack CD
 			starTimer -= Time.deltaTime;
-			if (starTimer <= 0f)
+			if (starTimer <= 0f && canStar == false)
 			{
-				canStar = true;
 				starTimer = starCooldown;
+				canStar = true;
 			}
 		}
 
@@ -125,6 +136,18 @@ namespace Name
 				transform.position = new Vector2 (this.transform.position.x, maxYPos);
 			}
 
+		}
+
+		void Boost ()
+		{
+			if (boost == true)
+			{
+				boostGO.SetActive (true);
+			}
+			else
+			{
+				boostGO.SetActive (false);
+			}
 		}
 	}
 }

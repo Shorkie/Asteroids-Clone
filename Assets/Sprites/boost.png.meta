@@ -1,15 +1,10 @@
 fileFormatVersion: 2
-guid: 4f9414691bd761343a92dc7953e7b91a
+guid: 604aae0743bab254f9f41a48b112f114
 TextureImporter:
   fileIDToRecycleName:
-    21300000: playerSprite
-    21300002: bulletSPrite
-    21300004: asteroid1Big
-    21300006: Asteroid1Med
-    21300008: Asteroid1Small
-    21300010: boostSprite0
-    21300012: boostSprite1
-    21300014: boostSprite2
+    21300000: boost_0
+    21300002: boost_1
+    21300004: boost_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -51,11 +46,11 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.48662698, y: 0.5298029}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteBorder: {x: 0, y: 11, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -71,7 +66,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +77,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,92 +87,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerSprite
+      name: boost_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 96
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5129217, y: 0.46506882}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0df5fa3882399d429de949b928b05af
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bulletSPrite
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 113
-        width: 2
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 081e6a80e0de7394fa141465bad04980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: asteroid1Big
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 96
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12456a1d55710bb4a9a0d66d6357dae3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asteroid1Med
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 96
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a23075067cd9e04b95249f5b74a6410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asteroid1Small
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 101
-        width: 6
+        x: 0
+        y: 11
+        width: 8
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -186,7 +101,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b40044176d59d8a43bc825eb4d03dc56
+      spriteID: b17c5c676494c194ab84dfcd53b598dd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boost_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdacfa73182e86e42b97d3c1ed082629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boost_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a853db93ec2f84149bb630cb71fd87ff
       vertices: []
       indices: 
       edges: []
@@ -194,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0ae806c34d376fe4394ab346e70fca8b
+    spriteID: e60e44125c9ad8c4cbd9941ccdd1cb7c
     vertices: []
     indices: 
     edges: []
