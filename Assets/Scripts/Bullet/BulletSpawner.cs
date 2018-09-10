@@ -26,6 +26,7 @@ namespace Name
 		public void starAttack(){
 			for(int i = 0; i < starAttackQuantity; i++)
 			{
+			//Bullet spawn rotation relative to player and quantity
 			Instantiate(bullet, player.transform.position, transform.rotation *= Quaternion.Euler(0,0,360 / starAttackQuantity));
 			}
 		}
