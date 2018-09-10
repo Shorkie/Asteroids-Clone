@@ -29,7 +29,6 @@ namespace Name
 		{
 			//Portal related
 			pPos = transform.position;
-			
 			inputManager ();
 			Portal ();
 			Cooldown ();
@@ -39,25 +38,21 @@ namespace Name
 		{
 			if (Input.GetKey (KeyCode.UpArrow))
 			{
-				Debug.Log ("Up");
 				//Go forward
 				transform.position += transform.up * Time.deltaTime * playerSpeed;
 			}
 			if (Input.GetKey (KeyCode.DownArrow))
 			{
 				//Go backwards
-				Debug.Log ("Down");
 				transform.position -= transform.up * Time.deltaTime * playerSpeed;
 			}
 			if (Input.GetKey (KeyCode.LeftArrow))
 			{
-				Debug.Log ("Left");
 				//Rotate counter-clockwise
 				this.transform.Rotate (0, 0, rotationSpeed * Time.deltaTime);
 			}
 			if (Input.GetKey (KeyCode.RightArrow))
 			{
-				Debug.Log ("Right");
 				//Rotate clockwise
 				this.transform.Rotate (0, 0, -rotationSpeed * Time.deltaTime);
 			}
@@ -65,7 +60,6 @@ namespace Name
 			{
 				if (canShoot == true)
 				{
-					Debug.Log ("Shoot");
 					var bs = GameObject.Find ("bulletSpawner").GetComponent<BulletSpawner> ();
 					canShoot = false;
 					bs.spawnBullet ();
