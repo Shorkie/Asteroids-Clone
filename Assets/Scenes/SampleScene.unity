@@ -329,8 +329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a4f19a39d1208459db9616386e10fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turboRot: 600
+  turboSpeed: 2
   boostGO: {fileID: 189604052}
-  boost: 0
   rotationSpeed: 500
   playerSpeed: 1.5
   maxXPos: 2.65

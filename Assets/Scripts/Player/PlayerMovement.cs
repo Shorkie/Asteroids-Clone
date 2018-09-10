@@ -7,9 +7,13 @@ namespace Name
 {
 	public class PlayerMovement : MonoBehaviour
 	{
+		//Turbo
+		public int turboRot = 600;
+		public float turboSpeed = 3f;
+		bool turbo = false;
 		//Boost
 		public GameObject boostGO;
-		public bool boost = false;
+		bool boost = false;
 		//Movement
 		public int rotationSpeed = 500;
 		public float playerSpeed = 0.5f;
@@ -35,10 +39,12 @@ namespace Name
 		{
 			//Portal related
 			pPos = transform.position;
+			//Turbo related
 			inputManager ();
 			Portal ();
 			Cooldown ();
 			Boost ();
+			Turbo();
 		}
 
 		void inputManager ()
@@ -53,6 +59,15 @@ namespace Name
 				//Go forward
 				transform.position += transform.up * Time.deltaTime * playerSpeed;
 				boost = true;
+				//Turbo mode
+				if(Input.GetKey(KeyCode.LeftShift))
+				{
+					turbo = true;
+				}
+				else
+				{
+					turbo = false;
+				}
 			}
 			else
 			{
@@ -81,7 +96,7 @@ namespace Name
 
 			}
 			//Star Attack
-			if (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.RightControl))
+			if (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.RightControl) || Input.GetKey(KeyCode.Z))
 			{
 				if (canStar == true)
 				{
@@ -147,6 +162,26 @@ namespace Name
 			else
 			{
 				boostGO.SetActive (false);
+			}
+		}
+
+		void Turbo ()
+		{
+			var t = boostGO.GetComponentInChildren<SpriteRenderer>();
+			if (turbo == true)
+			{
+				//Change color to C64 'Red'
+				t.color = new Color32(136,57,50,255);
+				rotationSpeed = turboRot;
+				playerSpeed = turboSpeed;
+			}
+			else
+			{
+				//CHANGE IT
+				rotationSpeed = 500;
+				playerSpeed = 1.5f;
+				//Whiteboi
+				t.color = Color.white;
 			}
 		}
 	}
