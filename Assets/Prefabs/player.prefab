@@ -28,22 +28,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1183126169661976
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4754225111974136}
-  - component: {fileID: 114196013199589088}
-  m_Layer: 0
-  m_Name: bulletSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1321668581254548
 GameObject:
   m_ObjectHideFlags: 1
@@ -191,7 +175,6 @@ Transform:
   m_Children:
   - {fileID: 4427473731386010}
   - {fileID: 4763471927993084}
-  - {fileID: 4754225111974136}
   - {fileID: 4723174911952394}
   - {fileID: 4580080489485688}
   m_Father: {fileID: 0}
@@ -261,7 +244,7 @@ Transform:
   m_Children:
   - {fileID: 4791416538308616}
   m_Father: {fileID: 4060758191914748}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4723174911952394
 Transform:
@@ -275,19 +258,6 @@ Transform:
   m_Children:
   - {fileID: 4529156919860896}
   - {fileID: 4381016177874408}
-  m_Father: {fileID: 4060758191914748}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4754225111974136
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183126169661976}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0786, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
   m_Father: {fileID: 4060758191914748}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -662,20 +632,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114196013199589088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183126169661976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24f23bf209517dc499060fc7887ebe6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1440845802486764}
-  bullet: {fileID: 1276179651842640, guid: 98dffc275cc82794ba4e4aed6cc822a9, type: 2}
-  starAttackQuantity: 20
 --- !u!114 &114269725661334436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -690,8 +646,8 @@ MonoBehaviour:
   turboRot: 600
   turboSpeed: 3
   boostGO: {fileID: 1716740441751822}
-  rotationSpeed: 81
-  playerSpeed: 0.4
+  rotationSpeed: 243
+  playerSpeed: 1.12
   maxXPos: 2.65
   maxYPos: 1.475
   shootingCooldown: 0.1
@@ -732,7 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1440845802486764}
-  bullet: {fileID: 1276179651842640, guid: 2a520ba5955d58f49ae63e1f010585c3, type: 2}
+  bullet: {fileID: 1276179651842640, guid: 98dffc275cc82794ba4e4aed6cc822a9, type: 2}
   starAttackQuantity: 20
 --- !u!114 &114957740634048142
 MonoBehaviour:
