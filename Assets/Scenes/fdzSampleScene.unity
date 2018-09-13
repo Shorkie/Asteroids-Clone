@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce9ab49cbe58764da244f038079c721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLives: 999
+  startingLives: 3
   UIScore: {fileID: 952662285}
   UILives: {fileID: 994776117}
   UIGameOver: {fileID: 1956951797}
@@ -376,9 +376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280a78b717f42a24db310217a8b4f36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shake: 0
-  shakeAmount: 0.3
-  decreaseFactor: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

@@ -16,8 +16,13 @@ namespace Name
 		float camWidth;
 		Vector2 margin;
 
-		float spawnRate = 1;
+		float spawnRate = 3f;
 		float timer;
+
+		void Start()
+		{
+			timer = spawnRate * .5f;
+		}
 
 		void Update()
 		{
@@ -25,7 +30,12 @@ namespace Name
 			if ( timer >= spawnRate )
 			{
 				timer = 0;
+				spawnRate -= .05f;
 				Spawn();
+			}
+			if ( spawnRate < .1f )
+			{
+				spawnRate = .1f;
 			}
 		}
 
