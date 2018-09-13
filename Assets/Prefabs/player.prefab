@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 114269725661334436}
   - component: {fileID: 50734277190760960}
   - component: {fileID: 60163450346881162}
-  - component: {fileID: 114314583642556630}
   - component: {fileID: 114957740634048142}
   m_Layer: 0
   m_Name: player
@@ -691,31 +690,11 @@ MonoBehaviour:
   turboRot: 600
   turboSpeed: 3
   boostGO: {fileID: 1716740441751822}
-  rotationSpeed: 500
-  playerSpeed: 1.5
+  rotationSpeed: 81
+  playerSpeed: 0.4
   maxXPos: 2.65
   maxYPos: 1.475
   shootingCooldown: 0.1
-  starCooldown: 2
---- !u!114 &114314583642556630
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1440845802486764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11a4f19a39d1208459db9616386e10fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turboRot: 600
-  turboSpeed: 2
-  boostGO: {fileID: 1568312590118200}
-  rotationSpeed: 500
-  playerSpeed: 1.5
-  maxXPos: 2.65
-  maxYPos: 1.475
-  shootingCooldown: 0.15
   starCooldown: 2
 --- !u!114 &114617240010164588
 MonoBehaviour:

@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -364,6 +365,20 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280a78b717f42a24db310217a8b4f36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shake: 0
+  shakeAmount: 0.3
+  decreaseFactor: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -720,18 +735,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114269725661334436, guid: b072310b2d1a78840b6b0e759fdce3e9,
         type: 2}
-      propertyPath: playerSpeed
-      value: 0.4
+      propertyPath: rotationSpeed
+      value: 306
       objectReference: {fileID: 0}
     - target: {fileID: 114269725661334436, guid: b072310b2d1a78840b6b0e759fdce3e9,
         type: 2}
-      propertyPath: rotationSpeed
-      value: 81
-      objectReference: {fileID: 0}
-    - target: {fileID: 114314583642556630, guid: b072310b2d1a78840b6b0e759fdce3e9,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 178
+      propertyPath: playerSpeed
+      value: 1.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b072310b2d1a78840b6b0e759fdce3e9, type: 2}

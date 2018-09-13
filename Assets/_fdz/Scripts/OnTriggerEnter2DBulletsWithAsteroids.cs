@@ -13,6 +13,7 @@ namespace Name
 			{
 				PlayerData.ModifyScore(asteroid.ScorePoints);
 				asteroid.GetComponent<DestroySelf>().SelfDestroy();
+				ScreenShake.DoIt(.2f, .05f);
 				Destroy(this.gameObject);
 			}
 		}

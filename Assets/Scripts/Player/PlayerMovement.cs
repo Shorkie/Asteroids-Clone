@@ -172,22 +172,22 @@ namespace Name
 
 		void Turbo ()
 		{
-			// var t = boostGO.GetComponentInChildren<SpriteRenderer>();
-			// if (turbo == true)
-			// {
-			// 	//Change color to C64 'Red'
-			// 	t.color = new Color32(136,57,50,255);
-			// 	rotationSpeed = turboRot;
-			// 	playerSpeed = turboSpeed;
-			// }
-			// else
-			// {
-			// 	//CHANGE IT
-			// 	rotationSpeed = 500;
-			// 	playerSpeed = 1.5f;
-			// 	//Whiteboi
-			// 	t.color = Color.white;
-			// }
+			var t = boostGO.GetComponentInChildren<SpriteRenderer>();
+			if (turbo == true)
+			{
+				//Change color to C64 'Red'
+				t.color = new Color32(136,57,50,255);
+				rotationSpeed = turboRot;
+				playerSpeed = turboSpeed;
+			}
+			else
+			{
+				//CHANGE IT
+				rotationSpeed = 500;
+				playerSpeed = 1.5f;
+				//Whiteboi
+				t.color = Color.white;
+			}
 		}
 	}
 }

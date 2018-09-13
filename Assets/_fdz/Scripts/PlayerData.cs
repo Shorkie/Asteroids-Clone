@@ -31,6 +31,7 @@ namespace Name
 				isInvencible = true;
 				ins.playerInvencibility.enabled = true;
 				ins.audioSource.Play();
+				ScreenShake.DoIt(.5f, .2f);
 			}
 
 			lives += value;
