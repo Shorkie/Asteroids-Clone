@@ -10,7 +10,6 @@ namespace Name
 		static PlayerData ins;
 		static int score = 0;
 		static int lives = 3;
-		static int startingLives = 3;
 
 		public static bool isInvencible { get; protected set; }
 
@@ -31,6 +30,7 @@ namespace Name
 			{
 				isInvencible = true;
 				ins.playerInvencibility.enabled = true;
+				ins.audioSource.Play();
 			}
 
 			lives += value;
@@ -45,23 +45,28 @@ namespace Name
 		static void ResetScene()
 		{
 			score = 0;
-			lives = startingLives;
 			SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex );
 		}
 
+		[SerializeField] int startingLives = 3;
 		[SerializeField] UnityEngine.UI.Text UIScore;
 		[SerializeField] UnityEngine.UI.Text UILives;
 		[SerializeField] UnityEngine.UI.Text UIGameOver;
 		[SerializeField] Transform playerTrans;
 		[SerializeField] PlayerInvencibility playerInvencibility;
+		AudioSource audioSource;
 
 		bool gameOver;
 
 		void Start()
 		{
 			ins = this;
+
+			lives = ins.startingLives;
 			
 			playerInvencibility = playerTrans.GetComponent<PlayerInvencibility>();
+			audioSource = GetComponent<AudioSource>();
+
 			UIGameOver.gameObject.SetActive(false);
 
 			ModifyScore(0);

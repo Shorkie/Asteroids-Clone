@@ -12,7 +12,8 @@ namespace Name
 			if ( asteroid != null )
 			{
 				PlayerData.ModifyScore(asteroid.ScorePoints);
-				Destroy(asteroid.gameObject);
+				asteroid.GetComponent<DestroySelf>().SelfDestroy();
+				Destroy(this.gameObject);
 			}
 		}
 	}
