@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Name
 {
-	public class AsteroidCollisionWithPlayer : MonoBehaviour
+	public class OnTriggerEnter2DAsteroidWithPlayer : MonoBehaviour
 	{
 		void OnTriggerEnter2D(Collider2D other)
 		{
