@@ -8,7 +8,6 @@ namespace Name
 		public GameObject player;
 		public GameObject bullet;
 		public int starAttackQuantity = 0;
-		Quaternion bulletRot;
 		// Use this for initialization
 		void Start () {
 			player.GetComponent<Transform>();

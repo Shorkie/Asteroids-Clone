@@ -28,6 +28,7 @@ namespace Name
 		float starTimer = 0f;
 		bool canShoot = false;
 		bool canStar = false;
+
 		// Use this for initialization
 		void Start ()
 		{
@@ -85,12 +86,14 @@ namespace Name
 			}
 			//Shooting stuff
 			//Single Bullet
-			if (Input.GetKey (KeyCode.Space))
+			if (Input.GetKeyDown (KeyCode.Space))
 			{
 				if (canShoot == true)
 				{
 					var bs = GameObject.Find ("bulletSpawner").GetComponent<BulletSpawner> ();
 					canShoot = false;
+					var b = GameObject.Find("shootSound").GetComponent<AudioSource>();
+					b.Play();
 					bs.spawnBullet ();
 				}
 
@@ -101,6 +104,8 @@ namespace Name
 				if (canStar == true)
 				{
 					var bs = GameObject.Find ("bulletSpawner").GetComponent<BulletSpawner> ();
+					var b = GameObject.Find("starSound").GetComponent<AudioSource>();
+					b.Play();
 					canStar = false;
 					bs.starAttack ();
 				}
